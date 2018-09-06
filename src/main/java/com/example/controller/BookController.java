@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BookController {
 		@RequestMapping(value="/index", method=RequestMethod.GET)
-				public String greeting(@RequestParam(value="name") 
-				String name, Model model) {
-					model.addAttribute("name",name);
-					return "";
+				public String homepage(Model model) {
+	
+					return "index";
 				}
 	}
 

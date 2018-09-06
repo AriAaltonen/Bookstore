@@ -5,6 +5,15 @@ public class Book {
 	private String title;
 	private String author;
 	private float price;
+	private String isbn;
+	
+	public String getIsbn() {
+		return isbn;
+	}
+	
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
 	
 	public int getYear() {
 		return year;
