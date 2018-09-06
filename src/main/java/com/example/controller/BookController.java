@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BookController {
-		@RequestMapping(value="/index", method=RequestMethod.POST)
-				public String greeting(@RequestParam(value="name") String name, Model model,@RequestParam(value="age") int age, Model modeli) {
+		@RequestMapping(value="/index", method=RequestMethod.GET)
+				public String greeting(@RequestParam(value="name") 
+				String name, Model model) {
 					model.addAttribute("name",name);
-					modeli.addAttribute("age",age);
-					return "hello";
+					return "";
 				}
 	}
 
