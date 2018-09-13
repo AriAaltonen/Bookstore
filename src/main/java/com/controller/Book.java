@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.controller;
 
 public class Book {
 	private int year;
