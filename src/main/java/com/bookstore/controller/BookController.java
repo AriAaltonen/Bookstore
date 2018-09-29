@@ -13,6 +13,11 @@ public class BookController {
 
 		return "index";
 	}
+	@RequestMapping(value = "/booklist", method = RequestMethod.GET)
+	public String bookList(Model model) {
+
+		return "booklist";
+	}
 }
 
 /*
