@@ -1,8 +1,8 @@
 package com.bookstore.controller;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Book {
@@ -12,17 +12,21 @@ public class Book {
 	private String title;
 	private String author;
 	private double price;
+	@ManyToOne
+	@JoinColumn(name = "id")
+	private Category category;
 	
 	public Book() {
 		
 	}
 	
-	public Book(String isbn, int year, String title, String author, double price) {
+	public Book(String isbn, int year, String title, String author, double price, Category category) {
 		this.isbn = isbn;
 		this.year = year;
 		this.title = title;
 		this.author = author;
 		this.price = price;
+		this.category = category;
 	}
 	
 	@Override
@@ -61,6 +65,14 @@ public class Book {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 }
