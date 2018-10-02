@@ -1,0 +1,20 @@
+<!DOCTYPEhtml>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Index page for Form</title>
+</head>
+	<body>
+	<h1>My friends</h1>
+	<ul>
+	<tr th:each="name : ${friends}">
+	<li th:text="${name}"></li>
+	</tr>
+	</ul>
+	<h1>Add new friend to list</h1>
+	<form action="#" th:action="@{/index}" method="get">
+	<p> Name: <input type="text" name="name" /></p>
+	<p><input type="submit" value="Submit" /></p>
+	</form>
+	</body>
+</html>
