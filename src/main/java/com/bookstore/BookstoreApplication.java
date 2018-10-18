@@ -12,6 +12,7 @@ import com.bookstore.controller.Category;
 import com.bookstore.controller.CategoryRepository;
 
 
+
 @SpringBootApplication
 public class BookstoreApplication {
 	private static final Logger log = org.slf4j.LoggerFactory.getLogger(BookstoreApplication.class);
@@ -21,15 +22,18 @@ public class BookstoreApplication {
 		SpringApplication.run(BookstoreApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner demo(BookRepository repository, CategoryRepository catRepo) {	
-		return new CommandLineRunner() {
-
-			@Override
-			public void run(String... args) throws Exception {
+	public CommandLineRunner bookDemo(BookRepository repository, CategoryRepository catRepo) {	
+		return (args) -> {
 				log.info("Adding categories");
 				catRepo.save(new Category((long) 0, "Action"));
 				catRepo.save(new Category((long) 1, "Erotic"));
-				//repository.save(new Book("ABCD-1234-BCDA", 1990, "Catcher", "AAb", 19.95, a));
+				
+				
+				repository.save(new Book("ABCD-1234-BCDA", 1990, "Catcher", "AAb", 19.95, catRepo.findByName("Action").get(0)));
+				
+				log.info("Fetch books");
+				for (Book book : repository.findAll()) {
+					log.info((book.toString()));
 			}
 		};
 	}

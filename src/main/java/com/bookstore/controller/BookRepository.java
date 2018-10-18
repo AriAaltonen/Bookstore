@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 public interface BookRepository extends CrudRepository<Book, Long> {
-	List<Book> findAll();
+	//List<Book> findAll();
 	//save(Book book);
 	@Transactional
 	void deleteByIsbn(String isbn);
