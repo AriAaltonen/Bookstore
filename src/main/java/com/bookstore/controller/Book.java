@@ -1,8 +1,12 @@
 package com.bookstore.controller;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Book {
@@ -13,6 +17,7 @@ public class Book {
 	private String author;
 	private double price;
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "id")
 	private Category category;
 	
@@ -31,7 +36,10 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		return "isbn =" + isbn + ", year =" + year +",title =" + title + ", author =" + author + ", price =" + price;
+		if (this.category != null)
+			return "Book [isbn=" + isbn + ", year=" + year + ", title=" + title + ", author=" + author + ", price=" + price + ", category=" + this.getCategory() + "]";
+		else
+			return "Book [isbn=" + isbn + ", year=" + year +",title=" + title + ", author=" + author + ", price=" + price + "]";
 	}
 	
 	public String getIsbn() {
@@ -74,5 +82,5 @@ public class Book {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-
+	
 }

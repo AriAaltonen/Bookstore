@@ -38,7 +38,7 @@ public class BookController {
 		return (List<Book>) bookrepository.findAll();
 	}
 	//find book by isbn
-	@RequestMapping(value="/book/{isbn]", method = RequestMethod.GET)
+	@RequestMapping(value="/book/{isbn}", method = RequestMethod.GET)
 		public @ResponseBody Book findBookRest(@PathVariable("isbn") String isbn) {
 			return bookrepository.findByIsbn(isbn);	
 	}
