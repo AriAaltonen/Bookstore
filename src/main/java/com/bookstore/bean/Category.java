@@ -1,4 +1,4 @@
-package com.bookstore.controller;
+package com.bookstore.bean;
 
 import java.util.List;
 

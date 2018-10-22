@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.bookstore.controller.Book;
+import com.bookstore.bean.Book;
+import com.bookstore.dao.BookRepository;
+import com.bookstore.dao.CategoryRepository;
 
 @Controller
 public class BookController {

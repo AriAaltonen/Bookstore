@@ -1,9 +1,9 @@
-package com.bookstore.controller;
-
-import java.util.List;
+package com.bookstore.dao;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.bookstore.bean.Book;
 
 
 public interface BookRepository extends CrudRepository<Book, Long> {

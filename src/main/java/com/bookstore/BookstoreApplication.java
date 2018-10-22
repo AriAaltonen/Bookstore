@@ -6,10 +6,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.bookstore.controller.Book;
-import com.bookstore.controller.BookRepository;
-import com.bookstore.controller.Category;
-import com.bookstore.controller.CategoryRepository;
+import com.bookstore.bean.Book;
+import com.bookstore.bean.Category;
+import com.bookstore.dao.BookRepository;
+import com.bookstore.dao.CategoryRepository;
 
 
 
