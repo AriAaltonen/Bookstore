@@ -37,8 +37,7 @@ public class BookstoreApplication {
 			userRepo.save(user1);
 			userRepo.save(user2);
 
-			repository.save(
-					new Book("ABCD-1234-BCDA", 1990, "Catcher", "AAb", 19.95, catRepo.findByName("Action").get(0)));
+			repository.save(new Book("ABCD-1234-BCDA", 1990, "Catcher", "AAb", 19.95, catRepo.findByName("Action").get(0)));
 
 			log.info("Fetch books");
 			for (Book book : repository.findAll()) {

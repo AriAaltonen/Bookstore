@@ -35,10 +35,10 @@ public class BookController {
 		return "booklist";
 	}
 	// REST list books
-	@RequestMapping(value = "/books", method = RequestMethod.GET)
-	public @ResponseBody List<Book> bookListRest() {
-		return (List<Book>) bookrepository.findAll();
-	}
+	//@RequestMapping(value = "/books", method = RequestMethod.GET)
+	//public @ResponseBody List<Book> bookListRest() {
+	//	return (List<Book>) bookrepository.findAll();
+	//}
 	//find book by isbn
 	@RequestMapping(value="/book/{isbn}", method = RequestMethod.GET)
 		public @ResponseBody Book findBookRest(@PathVariable("isbn") String isbn) {
